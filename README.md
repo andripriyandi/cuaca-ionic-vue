@@ -57,6 +57,14 @@ Buka alamat lokal yang ditampilkan oleh Vite di terminal. Koneksi internet diper
 npm run build
 ```
 
+## Publikasi gratis dengan GitHub Pages
+
+Proyek ini disiapkan untuk dipublikasikan melalui GitHub Pages menggunakan workflow [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml). Setiap perubahan yang dikirim ke branch `main` akan menjalankan `npm ci`, memeriksa TypeScript, membangun aplikasi, lalu mengunggah folder `dist/` ke GitHub Pages. Workflow juga dapat dijalankan manual dari tab **Actions**.
+
+Alamat situs setelah deployment pertama berhasil: https://andripriyandi.github.io/cuaca-ionic-vue/
+
+Pada repositori GitHub, buka **Settings → Pages** dan pilih **GitHub Actions** sebagai sumber publikasi. Repositori harus tetap publik agar dapat memakai GitHub Pages pada paket GitHub Free. Vite menggunakan base path `/cuaca-ionic-vue/` saat build, sedangkan Vue Router memakai URL hash agar halaman dapat dibuka ulang tanpa kesalahan 404.
+
 ## Hasil dan analisis
 
 Setelah data berhasil diambil, halaman menampilkan tabel waktu dan suhu per jam dalam WIB. Pilihan tanggal membantu membaca data tanpa menggulir seluruh prakiraan sekaligus. Grafik memperlihatkan kecenderungan suhu untuk maksimal 24 jam berikutnya, sementara kartu ringkasan menunjukkan cakupan dan rentang suhu dari data yang diterima.

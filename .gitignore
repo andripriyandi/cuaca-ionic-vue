@@ -3,3 +3,4 @@ dist/
 .npm-cache/
 .tools/
 .DS_Store
+~$*.docx
